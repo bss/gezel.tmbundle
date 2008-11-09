@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>mainMenu</key>
+	<dict>
+		<key>items</key>
+		<array>
+			<string>97175A88-A189-4489-958F-CEE407455BFC</string>
+			<string>5D8145D0-B2CF-4902-ACEE-A778EC62B661</string>
+			<string>------------------------------------</string>
+			<string>0223273A-1E38-4334-B2AC-B78DE1647092</string>
+		</array>
+		<key>submenus</key>
+		<dict>
+			<key>0223273A-1E38-4334-B2AC-B78DE1647092</key>
+			<dict>
+				<key>items</key>
+				<array>
+					<string>FBF5308F-AA9D-4930-BFE4-E403E2674D84</string>
+					<string>655871A5-AF57-4C0F-A15A-45F0612FAC27</string>
+					<string>5A3DA58D-8712-4DE8-B5EF-B06C65A0EDD9</string>
+					<string>54C7F928-7DBF-490C-BE1D-2C29443996E9</string>
+				</array>
+				<key>name</key>
+				<string>Insert</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>name</key>
+	<string>Gezel</string>
+	<key>ordering</key>
+	<array>
+		<string>8C58C0C3-2D79-470A-B88E-BF0CFC70464A</string>
+		<string>97175A88-A189-4489-958F-CEE407455BFC</string>
+		<string>5D8145D0-B2CF-4902-ACEE-A778EC62B661</string>
+		<string>FBF5308F-AA9D-4930-BFE4-E403E2674D84</string>
+		<string>655871A5-AF57-4C0F-A15A-45F0612FAC27</string>
+		<string>5A3DA58D-8712-4DE8-B5EF-B06C65A0EDD9</string>
+		<string>54C7F928-7DBF-490C-BE1D-2C29443996E9</string>
+	</array>
+	<key>uuid</key>
+	<string>33C62F68-FBC3-4F84-A8BA-653BA89FE428</string>
+</dict>
+</plist>

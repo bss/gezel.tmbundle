@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby
+
+require "#{ENV['TM_SUPPORT_PATH']}/lib/web_preview.rb"
+require ENV['TM_SUPPORT_PATH'] + '/lib/textmate.rb'
+require ENV['TM_SUPPORT_PATH'] + '/lib/ui.rb'
+
+# cycles = TextMate::UI.request_string :prompt =&gt; "Enter the number of cycles you want to simulate \n(only a number)", :default =&gt; "30"
+cycles = ENV['GZL_CYCLES']
+
+fdlsim = ENV['GZL_FDLSIM']
+
+if cycles == nil then
+   cycles = 150
+end
+
+html_header "Simulation of #{ENV['TM_FILENAME']}"
+
+puts "Output of &lt;b&gt;fdlsim #{ENV['TM_FILEPATH']} #{cycles}&lt;/b&gt;:"
+puts "&lt;pre&gt;"
+puts %x{ "#{fdlsim}" "$TM_FILEPATH" "#{cycles}" 2&gt;&amp;1}
+puts "&lt;/pre&gt;"
+
+html_footer</string>
+	<key>fallbackInput</key>
+	<string>document</string>
+	<key>input</key>
+	<string>document</string>
+	<key>keyEquivalent</key>
+	<string>@r</string>
+	<key>name</key>
+	<string>Simulate file</string>
+	<key>output</key>
+	<string>showAsHTML</string>
+	<key>scope</key>
+	<string>source.fdl</string>
+	<key>uuid</key>
+	<string>97175A88-A189-4489-958F-CEE407455BFC</string>
+</dict>
+</plist>
