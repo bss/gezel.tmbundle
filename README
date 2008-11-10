@@ -1,2 +1,30 @@
-Install into:
-~/Library/Application Support/TextMate/Bundles/
+------------------------------------------------------
+Introduction
+------------------------------------------------------
+Welcome!
+
+This textmate bundle helps development of gezel2: http://rijndael.ece.vt.edu/gezel2/index.php/Main_Page code on a mac.
+
+Currently supported:
+* Code highlighting (nothing fancy yet)
+* Simulation from textmate
+
+------------------------------------------------------
+Installation
+------------------------------------------------------
+You need to install the gezel simulator on you mac, see http://rijndael.ece.vt.edu/gezel2/index.php/GEZEL_Installation_Mac_OS_X
+
+1. Download bundle (Press download in the top of this page)
+2. Rename to: Gezel.tmbundle
+3. Move the bundle into ~/Library/Application Support/TextMate/Bundles/ (~ is your home directory)
+4. In textmate set these shell variables:
+
+	* GZL_FDLSIM: The full path to the fdlsim program
+	* GZL_CYCLES: Number of cycles to simulate. See gezel doc.
+5. Open a gezel file (.fdl), verify it says Gezel in the bottom of textmate, and press Command-R to run a simulation of the file.
+
+------------------------------------------------------
+Author
+------------------------------------------------------
+Currently authored by Bo Stendal Sorensen, bss@eflow.dk
+See the LICENSE file, for license.
