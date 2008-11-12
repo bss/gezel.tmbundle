@@ -10,14 +10,17 @@
 require "#{ENV['TM_SUPPORT_PATH']}/lib/web_preview.rb"
 require ENV['TM_SUPPORT_PATH'] + '/lib/textmate.rb'
 require ENV['TM_SUPPORT_PATH'] + '/lib/ui.rb'
+require ENV['TM_SUPPORT_PATH'] + "/lib/exit_codes.rb"
 
-# cycles = TextMate::UI.request_string :prompt =&gt; "Enter the number of cycles you want to simulate \n(only a number)", :default =&gt; "30"
 cycles = ENV['GZL_CYCLES']
-
 fdlsim = ENV['GZL_FDLSIM']
 
 if cycles == nil then
    cycles = 150
+end
+
+if (!File.exist?(fdlsim)) then
+	TextMate.exit_show_tool_tip "Could not find fdlsim: #{fdlsim}"
 end
 
 html_header "Simulation of #{ENV['TM_FILENAME']}"
@@ -27,7 +30,9 @@ puts "&lt;pre&gt;"
 puts %x{ "#{fdlsim}" "$TM_FILEPATH" "#{cycles}" 2&gt;&amp;1}
 puts "&lt;/pre&gt;"
 
-html_footer</string>
+html_footer
+TextMate.exit_show_html
+</string>
 	<key>fallbackInput</key>
 	<string>document</string>
 	<key>input</key>
@@ -37,7 +42,7 @@ html_footer</string>
 	<key>name</key>
 	<string>Simulate file</string>
 	<key>output</key>
-	<string>showAsHTML</string>
+	<string>discard</string>
 	<key>scope</key>
 	<string>source.fdl</string>
 	<key>uuid</key>
