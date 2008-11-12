@@ -1,0 +1,10 @@
+#!/bin/bash
+mono="/usr/bin/mono"
+refsim="/Users/andreas/Documents/DTU/02131 - Indlejrede systemer/gezel_simulator/refsim.exe"
+pre="gcc -E -P -C -nostdinc -x c"
+
+
+$pre $1 | cat
+
+
+ 

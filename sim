@@ -1,0 +1,21 @@
+#!/bin/bash
+mono="/usr/bin/mono"
+refsim="/Users/andreas/Documents/DTU/02131 - Indlejrede systemer/gezel_simulator/refsim.exe"
+pre="gcc -E -P -C -nostdinc -x c"
+
+$pre $1 > /dev/null
+
+if [ $? -ne 0 ]; then
+        $pre $1 | cat -n
+	return 1
+fi
+
+
+$pre $1 | $mono "$refsim" $2
+
+if [ $? -ne 0 ]; then
+	$pre $1 | cat -n
+fi
+
+
+ 
